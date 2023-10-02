@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Your Django App</title>
+</head>
+<body>
+    <!-- Your existing content -->
+
+    <form action="{% url 'generate_excel' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Generate Excel</button>
+    </form>
+</body>
+</html>
