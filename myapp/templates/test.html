@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+	<head>
+    <title>My Data Entries</title>
+	</head>
+	<body>
+    <h1>Data Entries</h1>
+		<h3> Raw data Dict </h3>
+    <p> {{ data_dict }} </p>
+		<form action="/data_dummy"> 
+			<button> Data dummy </button>
+		</form>
+		<form action="{% url 'delete_all_regions' %}" method="post">
+      {% csrf_token %}
+      <button type="submit" > Delete </button>
+    </form>
+		<form action="{% url 'save_data_2' %}" method="post">
+			{% csrf_token %}
+			<button> Run script </button>
+		</form>
+	</body>
+</html>

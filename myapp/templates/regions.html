@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generated Excel</title>
+</head>
+<body>
+    <h1>Generated Excel Data</h1>
+
+    {% if data %}
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Region Name</th>
+                    <th>Comunidad</th>
+                    <th>Primer Nivel</th>
+                    <th>Segundo Nivel</th>
+                    <th>Centros</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for region_name, region_data in data.items %}
+                    <tr>
+                        <td>{{ region_name }}</td>
+                        <td>{{ region_data.comunidad }}</td>
+                        <td>{{ region_data.primer_nivel }}</td>
+                        <td>{{ region_data.segundo_nivel }}</td>
+                        <td>{{ region_data.centros }}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No data available.</p>
+    {% endif %}
+</body>
+</html>
