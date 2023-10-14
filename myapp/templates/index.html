@@ -1,14 +1,68 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Your Django App</title>
-</head>
-<body>
-    <!-- Your existing content -->
+	<head>
+    <title>My Data Entries</title>
+	</head>
+	<body>
+    <h1>Data Entries</h1>
 
-    <form action="{% url 'generate_excel' %}" method="post">
-        {% csrf_token %}
-        <button type="submit">Generate Excel</button>
-    </form>
-</body>
+    <!-- Display data_entries -->
+    <!-- <h2>Data Entries List</h2>
+				 <ul>
+					 {% for entry in data_entries %}
+           <li>
+             Region: {{ entry.region.name }}, Category: {{ entry.category }}, First Value: {{ entry.values }}
+           </li>
+					 {% endfor %}
+				 </ul> -->
+
+				 <!-- Display data_dict -->
+				 <!-- <h2>Data Dictionary</h2>
+							{% for region, categories in data_dict.items %}
+							<h3>{{ region }}</h3>
+							<ul>
+								{% for category, values in categories.items %}
+                <li>
+                  Category: {{ category }}, Values: {{ values }}
+                </li>
+								{% endfor %}
+							</ul>
+							{% endfor %} -->
+
+							<h3> Raw data Dict </h3>
+    <p> {{ data_dict }} </p>
+    <!-- Add the delete button -->
+    
+
+    <!-- <form action="{% url 'delete_all_regions' %}" method="post">
+         {% csrf_token %}
+         <button type="submit" onclick="return confirm('Are you sure you want to delete all regions?')">Delete All Regions</button>
+    </form> -->
+
+    <!-- Input form for region1 -->
+    <!-- <h2>Input Form for Region1</h2>
+				 <form action="{% url 'save_data' %}" method="post">
+					 {% csrf_token %}
+					 <input type="hidden" name="region" value="region1">
+
+					 <label for="comunidad">Comunidad:</label>
+					 <input type="number" name="comunidad_1" min="1" max="10" required>
+					 <input type="number" name="comunidad_2" min="1" max="10" required>
+
+					 <label for="primer_nivel">Primer Nivel:</label>
+					 <input type="number" name="primer_nivel_1" min="1" max="10" required>
+					 <input type="number" name="primer_nivel_2" min="1" max="10" required>
+
+					 <label for="segundo_nivel">Segundo Nivel:</label>
+					 <input type="number" name="segundo_nivel_1" min="1" max="10" required>
+					 <input type="number" name="segundo_nivel_2" min="1" max="10" required>
+
+					 <label for="centros">Centros:</label>
+					 <input type="number" name="centros_1" min="1" max="10" required>
+					 <input type="number" name="centros_2" min="1" max="10" required>
+
+					 <button type="submit">Submit</button>
+				 </form> -->
+
+	</body>
 </html>
