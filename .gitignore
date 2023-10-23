@@ -1,0 +1,4 @@
+/myapp/__pycache__/*.pyc
+/myapp/migrations/__pycache__/*.pyc
+*.py#
+/myapp/*.xlsx#

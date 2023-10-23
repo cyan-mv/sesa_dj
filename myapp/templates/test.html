@@ -6,9 +6,9 @@
 	<body>
     <h1>Data Entries</h1>
 		<h3> Raw data Dict </h3>
-    <p> {{ data_dict }} </p>
+    <p> {{ DataFramesSetAll }} </p>
 		<form action="/data_dummy"> 
-			<button> Data dummy </button>
+			<button> Add two frames </button>
 		</form>
 		<form action="{% url 'delete_all_regions' %}" method="post">
       {% csrf_token %}
